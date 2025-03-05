@@ -4,12 +4,12 @@ using System.Linq.Expressions;
 
 namespace ParkingApp
 {
-    public class ParkingSpot
+    public class LocDeParcare
     {
         public int SpotNumber { get; set; }
         public bool IsOccupied { get; set; }
 
-        public ParkingSpot(int spotNumber)
+        public LocDeParcare(int spotNumber)
         {
             SpotNumber = spotNumber;
             IsOccupied = false;

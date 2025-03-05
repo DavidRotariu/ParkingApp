@@ -10,7 +10,7 @@ namespace ParkingApp
     {
         static void Main(string[] args)
         {
-            ParkingLot parcarea1 = new ParkingLot("Centru", 5);
+            Parcare parcarea1 = new Parcare("Centru", 5);
 
             parcarea1.DisplayParkingStatus();
 

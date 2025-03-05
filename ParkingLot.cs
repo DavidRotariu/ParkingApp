@@ -4,19 +4,19 @@ using System.Linq.Expressions;
 
 namespace ParkingApp
 {
-    public class ParkingLot
+    public class Parcare
     {
         public string Name { get; set; }
-        public List<ParkingSpot> Spots { get; set; }
+        public List<LocDeParcare> Spots { get; set; }
 
-        public ParkingLot(string name, int totalSpots)
+        public Parcare(string name, int totalSpots)
         {
             Name = name;
-            Spots = new List<ParkingSpot>();
+            Spots = new List<LocDeParcare>();
 
             for (int i = 1; i <= totalSpots; i++)
             {
-                Spots.Add(new ParkingSpot(i));
+                Spots.Add(new LocDeParcare(i));
             }
         }
 
