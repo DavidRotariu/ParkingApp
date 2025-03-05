@@ -12,19 +12,15 @@ namespace ParkingApp
         {
             Parcare parcarea1 = new Parcare("Centru", 5);
 
-            parcarea1.DisplayParkingStatus();
+            Console.WriteLine(parcarea1.GetStatusParcare());
 
-            Console.WriteLine("\nParcam in locul 3...");
-            parcarea1.Spots[2].ParkCar();
+            Console.WriteLine("\nParcam in locul 3...\n");
+            parcarea1.Locuri[2].Ocupare();
+            Console.WriteLine(parcarea1.GetStatusParcare());
 
-            Console.WriteLine("\nParcarea:");
-            parcarea1.DisplayParkingStatus();
-
-            Console.WriteLine("\nEliberam locul 3...");
-            parcarea1.Spots[2].FreeSpot();
-
-            Console.WriteLine("\nParcarea:");
-            parcarea1.DisplayParkingStatus();
+            Console.WriteLine("\nEliberam locul 3...\n");
+            parcarea1.Locuri[2].Eliberare();
+            Console.WriteLine(parcarea1.GetStatusParcare());
         }
     }
 }

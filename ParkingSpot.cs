@@ -6,44 +6,34 @@ namespace ParkingApp
 {
     public class LocDeParcare
     {
-        public int SpotNumber { get; set; }
-        public bool IsOccupied { get; set; }
+        public int Loc { get; set; }
+        public bool Ocupat { get; set; }
 
         public LocDeParcare(int spotNumber)
         {
-            SpotNumber = spotNumber;
-            IsOccupied = false;
+            Loc = spotNumber;
+            Ocupat = false;
         }
 
-        public void ParkCar()
+        public void Ocupare()
         {
-            if (!IsOccupied)
+            if (!Ocupat)
             {
-                IsOccupied = true;
-                Console.WriteLine($"Masina parcata in locul {SpotNumber}.");
-            }
-            else
-            {
-                Console.WriteLine($"Locul {SpotNumber} este deja ocupata.");
+                Ocupat = true;
             }
         }
 
-        public void FreeSpot()
+        public void Eliberare()
         {
-            if (IsOccupied)
+            if (Ocupat)
             {
-                IsOccupied = false;
-                Console.WriteLine($"Locul {SpotNumber} s-a eliberat.");
-            }
-            else
-            {
-                Console.WriteLine($"Locul {SpotNumber} este deja liber.");
+                Ocupat = false;
             }
         }
 
         public string GetInfo()
         {
-            return $"Locul {SpotNumber}: {(IsOccupied ? "Ocupat" : "Liber")}";
+            return $"Locul {Loc}: {(Ocupat ? "Ocupat" : "Liber")}";
         }
     }
 }

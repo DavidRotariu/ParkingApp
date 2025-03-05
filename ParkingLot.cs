@@ -1,32 +1,36 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
+using System.Text;
 
 namespace ParkingApp
 {
     public class Parcare
     {
-        public string Name { get; set; }
-        public List<LocDeParcare> Spots { get; set; }
+        public string Nume { get; set; }
+        public List<LocDeParcare> Locuri { get; set; }
 
-        public Parcare(string name, int totalSpots)
+        public Parcare(string nume, int totalSpots)
         {
-            Name = name;
-            Spots = new List<LocDeParcare>();
+            Nume = nume;
+            Locuri = new List<LocDeParcare>();
 
             for (int i = 1; i <= totalSpots; i++)
             {
-                Spots.Add(new LocDeParcare(i));
+                Locuri.Add(new LocDeParcare(i));
             }
         }
 
-        public void DisplayParkingStatus()
+        public string GetStatusParcare()
         {
-            Console.WriteLine($"Parcarea: {Name}");
-            foreach (var spot in Spots)
+            string status = $"Parcarea: {Nume}\n";
+
+            foreach (var spot in Locuri)
             {
-                Console.WriteLine(spot.GetInfo());
+                status += spot.GetInfo() + "\n";
             }
+
+            return status;
         }
     }
 }
