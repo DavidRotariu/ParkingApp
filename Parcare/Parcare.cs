@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq.Expressions;
 using System.Text;
 
 namespace ParkingApp
@@ -23,14 +22,39 @@ namespace ParkingApp
 
         public string GetStatusParcare()
         {
-            string status = $"Parcarea: {Nume}\n";
+            StringBuilder status = new StringBuilder();
+            status.AppendLine($"Parcarea: {Nume}");
 
             foreach (var spot in Locuri)
             {
-                status += spot.GetInfo() + "\n";
+                status.AppendLine(spot.GetInfo());
             }
 
-            return status;
+            return status.ToString();
+        }
+
+        public void OcupareLoc(int numarLoc)
+        {
+            if (numarLoc >= 1 && numarLoc <= Locuri.Count)
+            {
+                Locuri[numarLoc - 1].Ocupare();
+            }
+            else
+            {
+                Console.WriteLine($"Locul {numarLoc} nu exista!");
+            }
+        }
+
+        public void EliberareLoc(int numarLoc)
+        {
+            if (numarLoc >= 1 && numarLoc <= Locuri.Count)
+            {
+                Locuri[numarLoc - 1].Eliberare();
+            }
+            else
+            {
+                Console.WriteLine($"Locul {numarLoc} nu exista!");
+            }
         }
     }
 }

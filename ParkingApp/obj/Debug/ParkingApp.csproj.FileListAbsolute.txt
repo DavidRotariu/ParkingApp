@@ -10,3 +10,15 @@ C:\Users\david\OneDrive\Documents\GitHub\ParkingApp\bin\Debug\Parcare.dll
 C:\Users\david\OneDrive\Documents\GitHub\ParkingApp\bin\Debug\LocDeParcare.pdb
 C:\Users\david\OneDrive\Documents\GitHub\ParkingApp\bin\Debug\Parcare.pdb
 C:\Users\david\OneDrive\Documents\GitHub\ParkingApp\obj\Debug\ParkingApp.csproj.Up2Date
+C:\Users\david\OneDrive\Documents\GitHub\ParkingApp\ParkingApp\bin\Debug\ParkingApp.exe.config
+C:\Users\david\OneDrive\Documents\GitHub\ParkingApp\ParkingApp\bin\Debug\ParkingApp.exe
+C:\Users\david\OneDrive\Documents\GitHub\ParkingApp\ParkingApp\bin\Debug\ParkingApp.pdb
+C:\Users\david\OneDrive\Documents\GitHub\ParkingApp\ParkingApp\bin\Debug\LocDeParcare.dll
+C:\Users\david\OneDrive\Documents\GitHub\ParkingApp\ParkingApp\bin\Debug\Parcare.dll
+C:\Users\david\OneDrive\Documents\GitHub\ParkingApp\ParkingApp\bin\Debug\LocDeParcare.pdb
+C:\Users\david\OneDrive\Documents\GitHub\ParkingApp\ParkingApp\bin\Debug\Parcare.pdb
+C:\Users\david\OneDrive\Documents\GitHub\ParkingApp\ParkingApp\obj\Debug\ParkingApp.csproj.AssemblyReference.cache
+C:\Users\david\OneDrive\Documents\GitHub\ParkingApp\ParkingApp\obj\Debug\ParkingApp.csproj.CoreCompileInputs.cache
+C:\Users\david\OneDrive\Documents\GitHub\ParkingApp\ParkingApp\obj\Debug\ParkingApp.csproj.Up2Date
+C:\Users\david\OneDrive\Documents\GitHub\ParkingApp\ParkingApp\obj\Debug\ParkingApp.exe
+C:\Users\david\OneDrive\Documents\GitHub\ParkingApp\ParkingApp\obj\Debug\ParkingApp.pdb

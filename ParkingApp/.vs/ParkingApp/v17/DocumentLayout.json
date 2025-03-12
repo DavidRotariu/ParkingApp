@@ -1,12 +1,67 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\david\\OneDrive\\Documents\\GitHub\\ParkingApp\\ParkingApp\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{8947EB6F-BB56-430E-9D25-9666B049CF00}|..\\Parcare\\Parcare.csproj|c:\\users\\david\\onedrive\\documents\\github\\parkingapp\\parcare\\parcare.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62CCC693-5B79-462D-8BC5-D0EBEB2DFCD1}|ParkingApp.csproj|C:\\Users\\david\\OneDrive\\Documents\\GitHub\\ParkingApp\\ParkingApp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62CCC693-5B79-462D-8BC5-D0EBEB2DFCD1}|ParkingApp.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ACBEACEC-85DB-472E-BD39-B279A8F32C87}|..\\LocDeParcare\\LocDeParcare.csproj|c:\\users\\david\\onedrive\\documents\\github\\parkingapp\\locdeparcare\\locdeparcare.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "LocDeParcare.cs",
+              "DocumentMoniker": "C:\\Users\\david\\OneDrive\\Documents\\GitHub\\ParkingApp\\LocDeParcare\\LocDeParcare.cs",
+              "RelativeDocumentMoniker": "..\\LocDeParcare\\LocDeParcare.cs",
+              "ToolTip": "C:\\Users\\david\\OneDrive\\Documents\\GitHub\\ParkingApp\\LocDeParcare\\LocDeParcare.cs",
+              "RelativeToolTip": "..\\LocDeParcare\\LocDeParcare.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-11T11:23:57.863Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Parcare.cs",
+              "DocumentMoniker": "C:\\Users\\david\\OneDrive\\Documents\\GitHub\\ParkingApp\\Parcare\\Parcare.cs",
+              "RelativeDocumentMoniker": "..\\Parcare\\Parcare.cs",
+              "ToolTip": "C:\\Users\\david\\OneDrive\\Documents\\GitHub\\ParkingApp\\Parcare\\Parcare.cs",
+              "RelativeToolTip": "..\\Parcare\\Parcare.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAgAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-11T11:23:54.778Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\david\\OneDrive\\Documents\\GitHub\\ParkingApp\\ParkingApp\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\david\\OneDrive\\Documents\\GitHub\\ParkingApp\\ParkingApp\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAACIAAAAAAAAAAAAgwAUAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-11T11:23:52.985Z"
+            }
+          ]
+        }
+      ]
     }
   ]
 }

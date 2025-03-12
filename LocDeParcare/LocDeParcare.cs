@@ -1,18 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq.Expressions;
 
 namespace ParkingApp
 {
     public class LocDeParcare
     {
         public int Loc { get; set; }
-        public bool Ocupat { get; set; }
+        public bool Ocupat { get; private set; } = false;
 
         public LocDeParcare(int spotNumber)
         {
             Loc = spotNumber;
-            Ocupat = false;
         }
 
         public void Ocupare()
@@ -20,6 +17,11 @@ namespace ParkingApp
             if (!Ocupat)
             {
                 Ocupat = true;
+                Console.WriteLine($"Locul {Loc} a fost ocupat.");
+            }
+            else
+            {
+                Console.WriteLine($"Locul {Loc} este deja ocupat!");
             }
         }
 
@@ -28,6 +30,11 @@ namespace ParkingApp
             if (Ocupat)
             {
                 Ocupat = false;
+                Console.WriteLine($"Locul {Loc} a fost eliberat.");
+            }
+            else
+            {
+                Console.WriteLine($"Locul {Loc} este deja liber!");
             }
         }
 

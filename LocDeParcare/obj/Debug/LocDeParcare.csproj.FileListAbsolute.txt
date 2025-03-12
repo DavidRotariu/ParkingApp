@@ -4,3 +4,9 @@ C:\Users\david\OneDrive\Documents\GitHub\LocDeParcare\obj\Debug\LocDeParcare.csp
 C:\Users\david\OneDrive\Documents\GitHub\LocDeParcare\obj\Debug\LocDeParcare.csproj.CoreCompileInputs.cache
 C:\Users\david\OneDrive\Documents\GitHub\LocDeParcare\obj\Debug\LocDeParcare.dll
 C:\Users\david\OneDrive\Documents\GitHub\LocDeParcare\obj\Debug\LocDeParcare.pdb
+C:\Users\david\OneDrive\Documents\GitHub\ParkingApp\LocDeParcare\bin\Debug\LocDeParcare.dll
+C:\Users\david\OneDrive\Documents\GitHub\ParkingApp\LocDeParcare\bin\Debug\LocDeParcare.pdb
+C:\Users\david\OneDrive\Documents\GitHub\ParkingApp\LocDeParcare\obj\Debug\LocDeParcare.csproj.AssemblyReference.cache
+C:\Users\david\OneDrive\Documents\GitHub\ParkingApp\LocDeParcare\obj\Debug\LocDeParcare.csproj.CoreCompileInputs.cache
+C:\Users\david\OneDrive\Documents\GitHub\ParkingApp\LocDeParcare\obj\Debug\LocDeParcare.dll
+C:\Users\david\OneDrive\Documents\GitHub\ParkingApp\LocDeParcare\obj\Debug\LocDeParcare.pdb
