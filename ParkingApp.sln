@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.13.35818.85
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParkingApp", "ParkingApp.csproj", "{62CCC693-5B79-462D-8BC5-D0EBEB2DFCD1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParkingApp", "..\ParkingApp\ParkingApp\ParkingApp.csproj", "{62CCC693-5B79-462D-8BC5-D0EBEB2DFCD1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Parcare", "..\Parcare\Parcare.csproj", "{8947EB6F-BB56-430E-9D25-9666B049CF00}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Parcare", "..\ParkingApp\Parcare\Parcare.csproj", "{8947EB6F-BB56-430E-9D25-9666B049CF00}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LocDeParcare", "..\LocDeParcare\LocDeParcare.csproj", "{ACBEACEC-85DB-472E-BD39-B279A8F32C87}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LocDeParcare", "..\ParkingApp\LocDeParcare\LocDeParcare.csproj", "{ACBEACEC-85DB-472E-BD39-B279A8F32C87}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
