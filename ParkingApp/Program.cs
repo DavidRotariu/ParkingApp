@@ -1,96 +1,130 @@
 ﻿using System;
-using System.Collections.Generic;
+using NivelStocareDate;
+using LibrarieModele;
 
 namespace ParkingApp
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
-            List<Parcare> parcari = new List<Parcare>();
+            string numeFisier = "parcari.txt";
+            AdministrareParcari_FisierText adminParcari = new AdministrareParcari_FisierText(numeFisier);
 
-            // Read data from keyboard
-            Console.Write("Introduceti numarul de parcari: ");
-            int numarParcari = int.Parse(Console.ReadLine());
-
-            for (int i = 0; i < numarParcari; i++)
-            {
-                Console.Write($"Introduceti numele parcarii {i + 1}: ");
-                string numeParcare = Console.ReadLine();
-
-                Console.Write($"Introduceti numarul de locuri pentru {numeParcare}: ");
-                int numarLocuri = int.Parse(Console.ReadLine());
-
-                parcari.Add(new Parcare(numeParcare, numarLocuri));
-            }
-
-            while (true)
+            string optiune;
+            do
             {
                 Console.WriteLine("\nMeniu:");
-                Console.WriteLine("1. Afiseaza toate parcarile");
-                Console.WriteLine("2. Ocupa un loc de parcare");
-                Console.WriteLine("3. Elibereaza un loc de parcare");
-                Console.WriteLine("4. Iesire");
-                Console.Write("Alege o optiune: ");
+                Console.WriteLine("A. Afiseaza toate parcarile din fisier");
+                Console.WriteLine("N. Adauga o noua parcare");
+                Console.WriteLine("O. Ocupa un loc de parcare");
+                Console.WriteLine("L. Elibereaza un loc de parcare");
+                Console.WriteLine("X. Iesire");
+                Console.Write("Alegeti o optiune: ");
+                optiune = Console.ReadLine();
 
-                int optiune = int.Parse(Console.ReadLine());
-
-                if (optiune == 4)
-                    break;
-
-                switch (optiune)
+                switch (optiune.ToUpper())
                 {
-                    case 1:
-                        Console.WriteLine("\n--- Starea actuala a parcarilor ---");
-                        foreach (var parcare in parcari)
-                        {
-                            Console.WriteLine(parcare.GetStatusParcare());
-                        }
+                    case "A":
+                        AfiseazaParcari(adminParcari);
                         break;
-
-                    case 2:
-                        Console.Write("Introduceti numele parcarii: ");
-                        string numeParcareOcupare = Console.ReadLine();
-
-                        // cautare dupa nume
-                        Parcare parcareSelectataOcupare = parcari.Find(p => p.Nume == numeParcareOcupare);
-
-                        if (parcareSelectataOcupare != null)
-                        {
-                            Console.Write("Introduceti numarul locului de ocupat: ");
-                            int locOcupare = int.Parse(Console.ReadLine());
-                            parcareSelectataOcupare.OcupareLoc(locOcupare);
-                        }
-                        else
-                        {
-                            Console.WriteLine("Parcarea nu a fost gasita!");
-                        }
+                    case "N":
+                        AdaugaParcare(adminParcari);
                         break;
-
-                    case 3:
-                        Console.Write("Introduceti numele parcarii: ");
-                        string numeParcareEliberare = Console.ReadLine();
-
-                        // cautare dupa nume
-
-                        Parcare parcareSelectataEliberare = parcari.Find(p => p.Nume == numeParcareEliberare);
-
-                        if (parcareSelectataEliberare != null)
-                        {
-                            Console.Write("Introduceti numarul locului de eliberat: ");
-                            int locEliberare = int.Parse(Console.ReadLine());
-                            parcareSelectataEliberare.EliberareLoc(locEliberare);
-                        }
-                        else
-                        {
-                            Console.WriteLine("Parcarea nu a fost gasita!");
-                        }
+                    case "O":
+                        OcupaLoc(adminParcari);
                         break;
-
+                    case "L":
+                        ElibereazaLoc(adminParcari);
+                        break;
+                    case "X":
+                        Console.WriteLine("Iesire...");
+                        break;
                     default:
                         Console.WriteLine("Optiune invalida!");
                         break;
                 }
+            } while (optiune.ToUpper() != "X");
+        }
+
+        static void AfiseazaParcari(AdministrareParcari_FisierText adminParcari)
+        {
+            int nrParcari;
+            Parcare[] parcari = adminParcari.GetParcari(out nrParcari);
+            Console.WriteLine("\n--- Starea actuala a parcarilor ---");
+            for (int i = 0; i < nrParcari; i++)
+            {
+                Console.WriteLine(parcari[i].GetStatusParcare());
+            }
+        }
+
+        static void AdaugaParcare(AdministrareParcari_FisierText adminParcari)
+        {
+            Console.Write("Introduceti numele parcarii: ");
+            string numeParcare = Console.ReadLine();
+            Console.Write($"Introduceti numarul de locuri pentru {numeParcare}: ");
+            int numarLocuri = int.Parse(Console.ReadLine());
+
+            Parcare parcareNoua = new Parcare(numeParcare, numarLocuri);
+            adminParcari.AddParcare(parcareNoua);
+            Console.WriteLine("Parcarea a fost adaugata si salvata in fisier.");
+        }
+
+        static void OcupaLoc(AdministrareParcari_FisierText adminParcari)
+        {
+            int nrParcari;
+            Parcare[] parcari = adminParcari.GetParcari(out nrParcari);
+            Console.Write("Introduceti numele parcarii: ");
+            string numeParcare = Console.ReadLine();
+
+            Parcare parcareSelectata = null;
+            for (int i = 0; i < nrParcari; i++)
+            {
+                if (parcari[i].Nume.Equals(numeParcare, StringComparison.OrdinalIgnoreCase))
+                {
+                    parcareSelectata = parcari[i];
+                    break;
+                }
+            }
+            if (parcareSelectata != null)
+            {
+                Console.Write("Introduceti numarul locului de ocupat: ");
+                int numarLoc = int.Parse(Console.ReadLine());
+                parcareSelectata.OcupareLoc(numarLoc);
+                adminParcari.UpdateParcari(parcari, nrParcari);
+            }
+            else
+            {
+                Console.WriteLine("Parcarea nu a fost gasita!");
+            }
+        }
+
+        static void ElibereazaLoc(AdministrareParcari_FisierText adminParcari)
+        {
+            int nrParcari;
+            Parcare[] parcari = adminParcari.GetParcari(out nrParcari);
+            Console.Write("Introduceti numele parcarii: ");
+            string numeParcare = Console.ReadLine();
+
+            Parcare parcareSelectata = null;
+            for (int i = 0; i < nrParcari; i++)
+            {
+                if (parcari[i].Nume.Equals(numeParcare, StringComparison.OrdinalIgnoreCase))
+                {
+                    parcareSelectata = parcari[i];
+                    break;
+                }
+            }
+            if (parcareSelectata != null)
+            {
+                Console.Write("Introduceti numarul locului de eliberat: ");
+                int numarLoc = int.Parse(Console.ReadLine());
+                parcareSelectata.EliberareLoc(numarLoc);
+                adminParcari.UpdateParcari(parcari, nrParcari);
+            }
+            else
+            {
+                Console.WriteLine("Parcarea nu a fost gasita!");
             }
         }
     }
