@@ -1,5 +1,4 @@
-﻿using LibrarieModele;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -29,12 +28,12 @@ namespace LibrarieModele
             Locuri = new List<LocDeParcare>();
             for (int i = 0; i < totalSpots; i++)
             {
-                bool ocupat = false;
+                StareLoc stare = StareLoc.Liber;
                 if (tokens.Length > 2 + i)
                 {
-                    ocupat = tokens[2 + i] == "1";
+                    stare = tokens[2 + i] == "1" ? StareLoc.Ocupat : StareLoc.Liber;
                 }
-                Locuri.Add(new LocDeParcare(i + 1, ocupat));
+                Locuri.Add(new LocDeParcare(i + 1, stare));
             }
         }
 
@@ -79,7 +78,7 @@ namespace LibrarieModele
             sb.Append(Nume).Append(SEPARATOR).Append(Locuri.Count);
             foreach (var spot in Locuri)
             {
-                sb.Append(SEPARATOR).Append(spot.Ocupat ? "1" : "0");
+                sb.Append(SEPARATOR).Append(spot.Stare == StareLoc.Ocupat ? "1" : "0");
             }
             return sb.ToString();
         }

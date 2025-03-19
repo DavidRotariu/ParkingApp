@@ -5,38 +5,38 @@ namespace LibrarieModele
     public class LocDeParcare
     {
         public int Loc { get; set; }
-        public bool Ocupat { get; private set; } = false;
+        public StareLoc Stare { get; private set; } = StareLoc.Liber;
 
         public LocDeParcare(int loc)
         {
             Loc = loc;
         }
 
-        public LocDeParcare(int loc, bool ocupat)
+        public LocDeParcare(int loc, StareLoc stare)
         {
             Loc = loc;
-            Ocupat = ocupat;
+            Stare = stare;
         }
 
         public void Ocupare()
         {
-            if (!Ocupat)
+            if (Stare == StareLoc.Liber)
             {
-                Ocupat = true;
+                Stare = StareLoc.Ocupat;
             }
         }
 
         public void Eliberare()
         {
-            if (Ocupat)
+            if (Stare == StareLoc.Ocupat)
             {
-                Ocupat = false;
+                Stare = StareLoc.Liber;
             }
         }
 
         public string GetInfo()
         {
-            return $"Locul {Loc}: {(Ocupat ? "Ocupat" : "Liber")}";
+            return $"Locul {Loc}: {(Stare == StareLoc.Ocupat ? "Ocupat" : "Liber")}";
         }
     }
 }
