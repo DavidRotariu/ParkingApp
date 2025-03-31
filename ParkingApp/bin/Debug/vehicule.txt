@@ -1,0 +1,6 @@
+sv15rot;3/24/2025 4:33:40 PM;3/24/2025 4:34:06 PM;2;mall;Autoturism
+sv38edm;3/24/2025 12:51:39 PM;3/24/2025 12:52:01 PM;1;centru;Motocicleta
+sv15rot;3/24/2025 4:07:30 PM;null;2;centru;Autoturism
+sv15rot;3/24/2025 4:33:40 PM;null;2;mall;Autoturism
+sv15rot;3/24/2025 4:34:56 PM;null;3;mall;Autoturism
+sv15rot;3/24/2025 4:35:09 PM;null;1;centru;Autoturism

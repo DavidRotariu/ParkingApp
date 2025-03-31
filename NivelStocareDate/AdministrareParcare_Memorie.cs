@@ -15,7 +15,7 @@ namespace NivelStocareDate
             nrParcari = 0;
         }
 
-        public void AddParcare(Parcare parcare)
+        public bool AddParcare(Parcare parcare)
         {
             if (nrParcari < NR_MAX_PARCARI)
             {
@@ -24,14 +24,43 @@ namespace NivelStocareDate
             }
             else
             {
-                Console.WriteLine("Capacitate maxima atinsa!");
+                // Capacity reached, returning false instead of writing to console
+                return false;
             }
+            return true;
         }
 
         public Parcare[] GetParcari(out int nrParcari)
         {
             nrParcari = this.nrParcari;
             return parcari;
+        }
+
+        public Parcare FindParcareByNume(string numeParcare)
+        {
+            for (int i = 0; i < nrParcari; i++)
+            {
+                if (parcari[i].Nume.Equals(numeParcare, StringComparison.OrdinalIgnoreCase))
+                {
+                    return parcari[i];
+                }
+            }
+
+            return null;
+        }
+
+        public bool UpdateParcare(Parcare parcareDeActualizat)
+        {
+            for (int i = 0; i < nrParcari; i++)
+            {
+                if (parcari[i].Nume.Equals(parcareDeActualizat.Nume, StringComparison.OrdinalIgnoreCase))
+                {
+                    parcari[i] = parcareDeActualizat;
+                    return true;
+                }
+            }
+
+            return false;
         }
     }
 }

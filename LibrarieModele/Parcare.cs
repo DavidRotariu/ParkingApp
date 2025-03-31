@@ -9,10 +9,12 @@ namespace LibrarieModele
         private const char SEPARATOR = ';';
         public string Nume { get; set; }
         public List<LocDeParcare> Locuri { get; set; }
+        public decimal TarifOra { get; set; }
 
-        public Parcare(string nume, int totalSpots)
+        public Parcare(string nume, int totalSpots, decimal tarifOra = 5.0m)
         {
             Nume = nume;
+            TarifOra = tarifOra;
             Locuri = new List<LocDeParcare>();
             for (int i = 1; i <= totalSpots; i++)
             {
@@ -24,23 +26,29 @@ namespace LibrarieModele
         {
             string[] tokens = linieFisier.Split(SEPARATOR);
             Nume = tokens[0];
+
+            // Extrage tariful (adaugat la finalul liniei)
+            TarifOra = tokens.Length > 2 ? decimal.Parse(tokens[tokens.Length - 1]) : 5.0m;
+
             int totalSpots = int.Parse(tokens[1]);
             Locuri = new List<LocDeParcare>();
+
+            // Citirea statusului fiecarui loc (ocupat/liber)
             for (int i = 0; i < totalSpots; i++)
             {
-                StareLoc stare = StareLoc.Liber;
-                if (tokens.Length > 2 + i)
+                bool ocupat = false;
+                if (tokens.Length > 3 + i) // +1 pentru indexul shifted din cauza tarifului adaugat la final
                 {
-                    stare = tokens[2 + i] == "1" ? StareLoc.Ocupat : StareLoc.Liber;
+                    ocupat = tokens[2 + i] == "1";
                 }
-                Locuri.Add(new LocDeParcare(i + 1, stare));
+                Locuri.Add(new LocDeParcare(i + 1, ocupat));
             }
         }
 
         public string GetStatusParcare()
         {
             StringBuilder status = new StringBuilder();
-            status.AppendLine($"Parcarea: {Nume}");
+            status.AppendLine($"Parcarea: {Nume} (Tarif: {TarifOra} lei/ora)");
             foreach (var spot in Locuri)
             {
                 status.AppendLine(spot.GetInfo());
@@ -48,28 +56,26 @@ namespace LibrarieModele
             return status.ToString();
         }
 
-        public void OcupareLoc(int numarLoc)
+        public bool OcupareLoc(int numarLoc)
         {
             if (numarLoc >= 1 && numarLoc <= Locuri.Count)
             {
                 Locuri[numarLoc - 1].Ocupare();
+                return true;
             }
-            else
-            {
-                Console.WriteLine($"Locul {numarLoc} nu exista!");
-            }
+
+            return false;
         }
 
-        public void EliberareLoc(int numarLoc)
+        public bool EliberareLoc(int numarLoc)
         {
             if (numarLoc >= 1 && numarLoc <= Locuri.Count)
             {
                 Locuri[numarLoc - 1].Eliberare();
+                return true;
             }
-            else
-            {
-                Console.WriteLine($"Locul {numarLoc} nu exista!");
-            }
+
+            return false;
         }
 
         public string ConversieLaSir_PentruFisier()
@@ -78,9 +84,13 @@ namespace LibrarieModele
             sb.Append(Nume).Append(SEPARATOR).Append(Locuri.Count);
             foreach (var spot in Locuri)
             {
-                sb.Append(SEPARATOR).Append(spot.Stare == StareLoc.Ocupat ? "1" : "0");
+                sb.Append(SEPARATOR).Append(spot.Ocupat ? "1" : "0");
             }
+            // Adaugam tariful la finalul liniei
+            sb.Append(SEPARATOR).Append(TarifOra);
             return sb.ToString();
+
+            // Va adauga in fisiere: ParkingName;10;0;1;0;0;1;1;0;0;0;0;5.5
         }
     }
 }

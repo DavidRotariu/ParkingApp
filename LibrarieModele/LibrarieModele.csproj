@@ -44,9 +44,9 @@
     <Compile Include="LocDeParcare.cs" />
     <Compile Include="Parcare.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="StareLoc.cs" />
-    <Compile Include="TipVehiclu.cs" />
-    <Compile Include="Vehiclu.cs" />
+    <Compile Include="LocDeParcareStatus.cs" />
+    <Compile Include="TipVehicul.cs" />
+    <Compile Include="Vehicul.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

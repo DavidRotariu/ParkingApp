@@ -5,6 +5,7 @@
         Autoturism,
         Motocicleta,
         Camion,
-        Autocar
+        Duba,
+        Electric
     }
 }

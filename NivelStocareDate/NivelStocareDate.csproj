@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="AdministrareParcare_FisierText.cs" />
     <Compile Include="AdministrareParcare_Memorie.cs" />
+    <Compile Include="AdministrareVehicule_FisierText.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

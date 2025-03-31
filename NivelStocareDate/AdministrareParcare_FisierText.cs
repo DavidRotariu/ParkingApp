@@ -1,4 +1,5 @@
 ﻿using LibrarieModele;
+using System;
 using System.IO;
 
 namespace NivelStocareDate
@@ -37,6 +38,47 @@ namespace NivelStocareDate
                 }
             }
             return parcari;
+        }
+
+        // Cautare dupa nume
+        public Parcare FindParcareByNume(string numeParcare)
+        {
+            int nrParcari;
+            Parcare[] parcari = GetParcari(out nrParcari);
+
+            for (int i = 0; i < nrParcari; i++)
+            {
+                if (parcari[i].Nume.Equals(numeParcare, StringComparison.OrdinalIgnoreCase))
+                {
+                    return parcari[i];
+                }
+            }
+
+            return null;
+        }
+
+        public bool UpdateParcare(Parcare parcareDeActualizat)
+        {
+            int nrParcari;
+            Parcare[] parcari = GetParcari(out nrParcari);
+            bool actualizat = false;
+
+            for (int i = 0; i < nrParcari; i++)
+            {
+                if (parcari[i].Nume.Equals(parcareDeActualizat.Nume, StringComparison.OrdinalIgnoreCase))
+                {
+                    parcari[i] = parcareDeActualizat;
+                    actualizat = true;
+                    break;
+                }
+            }
+
+            if (actualizat)
+            {
+                UpdateParcari(parcari, nrParcari);
+            }
+
+            return actualizat;
         }
 
         public void UpdateParcari(Parcare[] parcari, int nrParcari)

@@ -1,0 +1,15 @@
+C:\Users\david\OneDrive\Documents\GitHub\ParkingApp\ParkingApp_UI_WindowsForms\bin\Debug\ParkingApp_UI_WindowsForms.exe.config
+C:\Users\david\OneDrive\Documents\GitHub\ParkingApp\ParkingApp_UI_WindowsForms\bin\Debug\ParkingApp_UI_WindowsForms.exe
+C:\Users\david\OneDrive\Documents\GitHub\ParkingApp\ParkingApp_UI_WindowsForms\bin\Debug\ParkingApp_UI_WindowsForms.pdb
+C:\Users\david\OneDrive\Documents\GitHub\ParkingApp\ParkingApp_UI_WindowsForms\obj\Debug\ParkingApp_UI_WindowsForms.csproj.AssemblyReference.cache
+C:\Users\david\OneDrive\Documents\GitHub\ParkingApp\ParkingApp_UI_WindowsForms\obj\Debug\ParkingApp_UI_WindowsForms.Properties.Resources.resources
+C:\Users\david\OneDrive\Documents\GitHub\ParkingApp\ParkingApp_UI_WindowsForms\obj\Debug\ParkingApp_UI_WindowsForms.csproj.GenerateResource.cache
+C:\Users\david\OneDrive\Documents\GitHub\ParkingApp\ParkingApp_UI_WindowsForms\obj\Debug\ParkingApp_UI_WindowsForms.csproj.CoreCompileInputs.cache
+C:\Users\david\OneDrive\Documents\GitHub\ParkingApp\ParkingApp_UI_WindowsForms\obj\Debug\ParkingApp_UI_WindowsForms.exe
+C:\Users\david\OneDrive\Documents\GitHub\ParkingApp\ParkingApp_UI_WindowsForms\obj\Debug\ParkingApp_UI_WindowsForms.pdb
+C:\Users\david\OneDrive\Documents\GitHub\ParkingApp\ParkingApp_UI_WindowsForms\obj\Debug\ParkingApp_UI_WindowsForms.Form1.resources
+C:\Users\david\OneDrive\Documents\GitHub\ParkingApp\ParkingApp_UI_WindowsForms\bin\Debug\LibrarieModele.dll
+C:\Users\david\OneDrive\Documents\GitHub\ParkingApp\ParkingApp_UI_WindowsForms\bin\Debug\NivelStocareDate.dll
+C:\Users\david\OneDrive\Documents\GitHub\ParkingApp\ParkingApp_UI_WindowsForms\bin\Debug\LibrarieModele.pdb
+C:\Users\david\OneDrive\Documents\GitHub\ParkingApp\ParkingApp_UI_WindowsForms\bin\Debug\NivelStocareDate.pdb
+C:\Users\david\OneDrive\Documents\GitHub\ParkingApp\ParkingApp_UI_WindowsForms\obj\Debug\ParkingA.664DF3EB.Up2Date
